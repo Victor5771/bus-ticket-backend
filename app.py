@@ -165,6 +165,7 @@ def booked(busid):
         bookinginsert(booking_details)
     return render_template('booked.html', id=bookingid)
 
+
 if __name__ == '__main__':
     create_tables()  
     app.run(debug=True)
