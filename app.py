@@ -82,7 +82,7 @@ def change(id):
         return render_template('404.html'), 404
     return render_template('change.html', busd=busd)
 
-# Booking details page, here we got an option for update or delete
+# Booking details page,  options for update or delete
 @app.route('/updel/<int:bookid>', methods=["GET", "POST"])
 def updel(bookid):
     if request.method == "POST":
@@ -166,7 +166,7 @@ def booked(busid):
     return render_template('booked.html', id=bookingid)
 
 if __name__ == '__main__':
-    create_tables()  # Create tables before running the application
+    create_tables()  
     app.run(debug=True)
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
@@ -336,5 +336,5 @@ def booked(busid):
     return render_template('booked.html', id=bookingid)
 
 if __name__ == '__main__':
-    create_tables()  # Create tables before running the application
+    create_tables()  
     app.run(debug=True)
