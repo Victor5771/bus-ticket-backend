@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p align = "center">
+    <form action={{url_for('updatebook', bookid = busd[0][0])}} method="POST">
+        Update your name:
+        <input type = "text" name = "name" value = {{ busd[1][1] }} size = 15 required><br>
+        Update your Phone Number:
+        <input type = "text" name = "phno" value = {{ busd[1][2] }} size = 15 required><br>
+        Update your email:
+        <input type = "email" name = "email" value = {{ busd[1][3] }} size = 15 required><br>
+        Update the number of passengers:
+        <select name="passengers" required>
+            {% for i in seats %}
+              <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+          </select>
+        <br>
+
+        <input type = "submit" name = "submit">
+    </form>
+
+</p>
+
+{% endblock %}

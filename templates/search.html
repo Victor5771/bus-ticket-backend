@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+    <tr>
+      <th>ID</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Date</th>
+      <th>Cost</th>
+      <th>Rating</th>
+      <th>Depature</th>
+      <th>Arrival</th>
+      <th>Seats Left</th>
+      <th>Book</th>
+    </tr>
+    {% for bus in det %}
+    <tr>
+      <td>{{ bus[0] }}</td>
+      <td>{{ bus[1].title() }}</td>
+      <td>{{ bus[2].title() }}</td>
+      <td>{{ bus[8] }}</td>
+      <td>{{ bus[3] }}</td>
+      <td>{{ bus[4] }}</td>
+      <td>{{ bus[5] }}</td>
+      <td>{{ bus[6] }}</td>
+      <td>{{ bus[7] }}</td>
+      <td> <a href={{url_for('book', busid = bus[0])}}>Reserve</a> </td>
+    </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="search">
+    <form action="{{url_for('index')}}" method="POST">
+        From:
+        <select name="from">
+            <option value="thika">Thika</option>
+            <option value="nyeri">Nyeri</option>
+            <option value="mombasa">Mombasa</option>
+            <option value="muranga">Muranga</option>
+        </select>
+        To:
+        <select name="to">
+            <option value="nyeri">Nyeri</option>
+            <option value="thika">Thika</option>
+            <option value="mombasa">Mombasa</option>
+            <option value="muranga">Muranga</option>
+        </select>
+        <input type="submit" name="Search">
+    </form>
+</div>
+{% endblock %}
